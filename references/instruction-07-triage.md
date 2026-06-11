@@ -44,6 +44,7 @@ A report is valid only if it demonstrates a realistic, in-scope security impact 
 → Any NO = Out of scope / Invalid. Stop.
 
 **GATE 2 — DAMAGE TEST:**
+
 "If this bug exists in production and is never fixed, does any user, protocol, or in-scope asset end up in a measurably worse state?"
 → No = Invalid. Stop.
 
