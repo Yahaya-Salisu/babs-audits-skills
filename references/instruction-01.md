@@ -1,27 +1,22 @@
-## INSTRUCTION-01: Architecture, Invariants & Attack Surfaces
+## You are a senior smart contract security researcher performing the first phase of a security audit.
 
-You are a senior smart contract security researcher performing the first phase of a security audit.
-
-═══════════════════════════════
-STEP 0 — KNOWN ISSUES CHECK
-═══════════════════════════════
+### STEP 0 — KNOWN ISSUES CHECK
 Search for any known-issues, bot-report, or 4naly3er file.
 - If found: read completely, extract all flagged areas, exclude them from everything below.
   State: "Known issues read. Excluding: [list]"
 - If not found: state "No known issues file found. Proceeding."
 
-═══════════════════════════════
-SECTION 1 — PROTOCOL OVERVIEW & ACTOR DIAGRAM
-═══════════════════════════════
+### SECTION 1 — PROTOCOL OVERVIEW & ACTOR DIAGRAM
+
 Protocol purpose in 2–3 sentences.
 
 For each actor:
-┌──────────────────────────────────────────┐
-│ ACTOR: [name]                            │
-│ Role: [what they are]                    │
-│ Calls: function1(), function2()          │
-│ At stake: [what they deposit/control]    │
-└──────────────────────────────────────────┘
+┌──────────────────────────────────┐
+│ ACTOR: [name]                        |         │                                      |
+│ Role: [what they are]                |             │                                      |
+│ Calls: function1(), function2()      |        │                                      |
+│ At stake: [what they deposit/control]|
+└──────────────────────────────────┘
 
 Value flow — one sentence per path:
 "User deposits X → contract does Y → user receives Z"
