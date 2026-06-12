@@ -1,6 +1,6 @@
 ---
 name: babs-audits-skills
-description: Reusable smart-contract audit and triage workflows. Use when the user invokes `/instruction-01`, `/instruction-02-attack-surface`, `/instruction-02-invariant`, `/instruction-03-adversarial`, `/instruction-03-poc`, `/ instruction-04-fuzzing`, `/instruction-05-cantina`, `/instruction-05-sherlock`, /instruction-06-duplicates`, `/instruction-07-triage` or asks to run a Babs audit instruction for architecture mapping, invariant hunting, attack-surface bug hunting, adversarial verification, PoC writing, fuzzing, report formatting, duplicate triage, or finding triage.
+description: Reusable smart-contract audit and triage workflows. Use when the user invokes `/instruction-01`, `/instruction-02-attack-surface`, `/instruction-02-invariant`, `/instruction-03-adversarial`, `/instruction-03-poc`, `/ instruction-04-fuzzing`, `/instruction-05-cantina`, `/instruction-05-sherlock`, `/instruction-06-duplicates`, `/instruction-07-triage` or asks to run a Babs audit instruction for architecture mapping, invariant hunting, attack-surface bug hunting, adversarial verification, PoC writing, fuzzing, report formatting, duplicate triage, or finding triage.
 ---
 
 # Babs Audits Skills
