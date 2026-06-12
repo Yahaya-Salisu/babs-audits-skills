@@ -1,10 +1,9 @@
 # babs-audits-skills
 Smart Contract Audits and Triage Skills
 
----
+
 Name: babs-audits-skills
 Description: Reusable smart-contract audit instruction and triage. Triggers: `/INSTRUCTION-01`, `/INSTRUCTION-02`, `/INSTRUCTION-02-T1`, `/INSTRUCTION-02-T2`, `/INSTRUCTION-03`, `/INSTRUCTION-05` or their `Run` equivalents.
----
 
 # babs-audits-skills
 
