@@ -1,5 +1,32 @@
 # babs-audits-skills
-Smart Contract Audits and Triage Skills 
+Smart Contract Audits and Triage Skills
+
+---
+Name: babs-audits-skills
+Description: Reusable smart-contract audit instruction and triage. Triggers: `/INSTRUCTION-01`, `/INSTRUCTION-02`, `/INSTRUCTION-02-T1`, `/INSTRUCTION-02-T2`, `/INSTRUCTION-03`, `/INSTRUCTION-05` or their `Run` equivalents.
+---
+
+# babs-audits-skills
+
+Follow the requested instruction exactly. Apply it to the current repository or the most recent finding if no target is specified.
+
+## Global Rules
+- Search the local repository first. Never assume function names, file names, or architecture.
+- In-scope files only.
+- Be harsh. Reject weak, speculative, or low-impact claims.
+- State broken invariants explicitly for every bug discussion.
+- Downgrade severity one tier per precondition the attacker does not control.
+- Prefer concise, evidence-driven reasoning. No generic security advice.
+
+## Trigger Routing
+- `/INSTRUCTION-01` → Architecture, invariants, attack surfaces
+- `/INSTRUCTION-02` or `/INSTRUCTION-02-T2` → Attack surface bug hunt
+- `/INSTRUCTION-02-T1` → Invariant break hunt
+- `/INSTRUCTION-03` → Adversarial verification (+ optional PoC)
+- `/INSTRUCTION-04` → Reserved
+- `/INSTRUCTION-05` → Report formatting
+
+---
 
 ```md
 babs-audits-skills/
