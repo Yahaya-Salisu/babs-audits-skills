@@ -10,7 +10,7 @@
 - Identify all counterpoints
 - Run each finding through these gates:
 
-**GATE 1 — DAMAGE TEST:**
+***GATE 1 — DAMAGE TEST:***
 "If this bug exists in production and is never fixed, does any user
 or the protocol end up in a measurably worse state?"
 → No = INVALID
