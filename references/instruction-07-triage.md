@@ -4,10 +4,9 @@
 ### INPUTS REQUIRED BEFORE STARTING:
 - Project repository / local codebase
 - Project documentation, if available
-- HackenProof global rules and project-specific rules, if available
-- All findings in markdown
-- Scope list: in-scope assets, addresses, versions, and exclusions
-- Triage preferences from the reviewer
+- Link of platform's global rules
+- Program link for scope and specific rules
+- All findings in markdown file
 
 ### CORE PRINCIPLE:
 A report is valid only if it demonstrates a realistic, in-scope security impact caused by a bug in the reviewed target.
