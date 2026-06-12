@@ -7,7 +7,7 @@ Before formatting, verify:
 - Recommendation changes exactly one thing — if multiple fixes needed, refine root cause first
 
 ### TASK-01: Cantina Style
-
+```md
 # Title
 
 ## Summary
@@ -22,6 +22,4 @@ Before formatting, verify:
 // skip this
 
 ## Recommendation
-
----
-
+```
