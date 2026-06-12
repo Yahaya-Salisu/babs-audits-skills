@@ -11,12 +11,12 @@ Search for any known-issues, bot-report, or 4naly3er file.
 Protocol purpose in 2–3 sentences.
 
 For each actor:
-┌──────────────────────────────────┐
-│ ACTOR: [name]                        |         │                                      |
-│ Role: [what they are]                |             │                                      |
-│ Calls: function1(), function2()      |        │                                      |
-│ At stake: [what they deposit/control]|
-└──────────────────────────────────┘
+┌─────────────────────────────┐
+│ ACTOR: [name]                  |         │                                |
+│ Role: [what they are]          |             │                                |
+│ Calls: function1(), function2()|        │                                |
+│ At stake: [what they control]  |
+└─────────────────────────────┘
 
 Value flow — one sentence per path:
 "User deposits X → contract does Y → user receives Z"
