@@ -13,9 +13,9 @@ Protocol purpose in 2–3 sentences.
 For each actor:
 ```md
 ┌─────────────────────────────┐
-│ ACTOR: [name]                  |         │                                |
-│ Role: [what they are]          |             │                                |
-│ Calls: function1(), function2()|        │                                |
+│ ACTOR: [name]                  |         │                                
+│ Role: [what they are]          |             │                                
+│ Calls: function1(), function2()|        │                                
 │ At stake: [what they control]  |
 └─────────────────────────────┘
 ```
