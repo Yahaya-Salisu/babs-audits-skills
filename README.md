@@ -26,8 +26,6 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 - `/INSTRUCTION-04` → Reserved
 - `/INSTRUCTION-05` → Report formatting
 
----
-
 ```md
 babs-audits-skills/
   SKILL.md
