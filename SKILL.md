@@ -18,6 +18,17 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 
 ## Trigger Routing
 
+- `/instruction-01` or `run instruction-01` read references/instruction-01.md
+- `/instruction-02-attack-surface` or `run instruction-02-attack-surface` read references/instruction-02-attack-surface.md
+- `/instruction-02-invariant`
+- `/instruction-03-adversarial`
+- `/instruction-03-poc`
+- `/instruction-04-fuzzing`
+- `/instruction-05-cantina`
+- `/instruction-05-sherlock`
+- `/instruction-06-duplicates`
+- `/instruction-07-triage`
+
 - `/INSTRUCTION-01` or `Run INSTRUCTION-01`: read `references/instruction-01.md`.
 - `/INSTRUCTION-02`, `/INSTRUCTION-02-T2`, or their `Run` equivalents: read `references/instruction-02-attack-surface.md`.
 - `/INSTRUCTION-02-T1` or `Run INSTRUCTION-02-T1`: read `references/instruction-02-invariant.md`.
