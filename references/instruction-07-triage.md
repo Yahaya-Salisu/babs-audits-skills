@@ -111,6 +111,9 @@ If no concrete impact class applies = Invalid or Informational.
 | ID | Verdict | Severity | Failed/Passed Gate | Comment to reporter |
 |----|---------|----------|--------------------|---------------------|
 | | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
 
 ### COMMENT RULES:
 - Max 2 lines.
