@@ -4,7 +4,7 @@ Smart Contract Audits and Triage Skills
 
 Name: babs-audits-skills
 
-Description: Reusable smart-contract audit instruction and triage. Triggers: `/INSTRUCTION-01`, `/INSTRUCTION-02`, `/INSTRUCTION-02-T1`, `/INSTRUCTION-02-T2`, `/INSTRUCTION-03`, `/INSTRUCTION-05` or their `Run` equivalents.
+Description: Reusable smart-contract audit instruction and triage.
 
 # babs-audits-skills
 
@@ -19,6 +19,17 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 - Prefer concise, evidence-driven reasoning. No generic security advice.
 
 ## Trigger Routing
+- `/instruction-01.md
+- `/instruction-02-attack-surface`
+- `/instruction-02-invariant`
+- `/instruction-03-adversarial`
+- `/instruction-03-poc`
+- `/instruction-04-fuzzing`
+- `/instruction-05-cantina`
+- `/instruction-05-sherlock`
+- `/instruction-06-duplicates`
+- `/instruction-07-triage`
+
 - `/INSTRUCTION-01` → Architecture, invariants, attack surfaces
 - `/INSTRUCTION-02` or `/INSTRUCTION-02-T2` → Attack surface bug hunt
 - `/INSTRUCTION-02-T1` → Invariant break hunt
