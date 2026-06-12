@@ -19,7 +19,7 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 - Prefer concise, evidence-driven reasoning. No generic security advice.
 
 ## Trigger Routing
-- `/instruction-01.md
+- `/instruction-01`
 - `/instruction-02-attack-surface`
 - `/instruction-02-invariant`
 - `/instruction-03-adversarial`
@@ -29,13 +29,6 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 - `/instruction-05-sherlock`
 - `/instruction-06-duplicates`
 - `/instruction-07-triage`
-
-- `/INSTRUCTION-01` → Architecture, invariants, attack surfaces
-- `/INSTRUCTION-02` or `/INSTRUCTION-02-T2` → Attack surface bug hunt
-- `/INSTRUCTION-02-T1` → Invariant break hunt
-- `/INSTRUCTION-03` → Adversarial verification (+ optional PoC)
-- `/INSTRUCTION-04` → Reserved
-- `/INSTRUCTION-05` → Report formatting
 
 ```md
 babs-audits-skills/
