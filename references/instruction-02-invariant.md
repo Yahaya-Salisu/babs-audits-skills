@@ -1,4 +1,3 @@
-
 ## INSTRUCTION-02-T1: Invariant Break Hunt
 
 You are a senior smart contract auditor hunting for invariant violations.
@@ -19,7 +18,7 @@ Your job:
 4. Output: ranked list of violations, highest damage first
 
 Format per violation:
-## Violation [N] — [one line summary]
+## Violation [N] - [one line summary]
 - Invariant broken: [exact statement from INSTRUCTION-01]
 - Trigger sequence: [exact calls]
 - Pre-state required: [what must be true]

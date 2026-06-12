@@ -1,4 +1,3 @@
-
 ---
 name: babs-audits-skills
 description: Reusable smart-contract audit and triage workflows. Use when the user invokes /INSTRUCTION-01, /INSTRUCTION-02, /INSTRUCTION-02-T1, /INSTRUCTION-02-T2, /INSTRUCTION-03, /INSTRUCTION-03-T1, /INSTRUCTION-04, /INSTRUCTION-05, /INSTRUCTION-06, /INSTRUCTION-07, or asks to run a Babs audit instruction for architecture mapping, invariant hunting, attack-surface bug hunting, adversarial verification, PoC writing, fuzzing, report formatting, duplicate triage, or finding triage.

@@ -1,49 +1,40 @@
 # babs-audits-skills
-Smart Contract Audits and Triage Skills
 
+Reusable Codex skill for smart-contract audit workflows, finding verification, PoC writing, fuzzing, report formatting, duplicate grouping, and bounty triage.
 
-Name: babs-audits-skills
+## Install
 
-Description: Reusable smart-contract audit instruction and triage.
+Clone this repository into your Codex skills directory:
 
-# babs-audits-skills
+    ~/.codex/skills/babs-audits-skills/
 
-Follow the requested instruction exactly. Apply it to the current repository or the most recent finding if no target is specified.
+## Triggers
 
-## Global Rules
-- Search the local repository first. Never assume function names, file names, or architecture.
-- In-scope files only.
-- Be harsh. Reject weak, speculative, or low-impact claims.
-- State broken invariants explicitly for every bug discussion.
-- Downgrade severity one tier per precondition the attacker does not control.
-- Prefer concise, evidence-driven reasoning. No generic security advice.
+- /INSTRUCTION-01: Architecture, invariants, and attack surfaces
+- /INSTRUCTION-02 or /INSTRUCTION-02-T2: Attack-surface bug hunt
+- /INSTRUCTION-02-T1: Invariant break hunt
+- /INSTRUCTION-03: Adversarial verification
+- /INSTRUCTION-03-T1: Foundry PoC writing
+- /INSTRUCTION-04: Foundry fuzzing test writer
+- /INSTRUCTION-05 Cantina: Cantina report formatting
+- /INSTRUCTION-05 Sherlock: Sherlock report formatting
+- /INSTRUCTION-06: Duplicate finding triage
+- /INSTRUCTION-07: Bounty finding triage
 
-## Trigger Routing
-- `/instruction-01`
-- `/instruction-02-attack-surface`
-- `/instruction-02-invariant`
-- `/instruction-03-adversarial`
-- `/instruction-03-poc`
-- `/instruction-04-fuzzing`
-- `/instruction-05-cantina`
-- `/instruction-05-sherlock`
-- `/instruction-06-duplicates`
-- `/instruction-07-triage`
+## Structure
 
-```md
-babs-audits-skills/
-  SKILL.md
-  agents/
-    openai.yaml
-  references/
-    instruction-01.md
-    instruction-02-attack-surface.md
-    instruction-02-invariant.md
-    instruction-03-adversarial.md
-    instruction-03-poc.md
-    instruction-04-fuzzing.md
-    instruction-05-cantina.md
-    instruction-05-sherlock.md
-    instruction-06-duplicates.md
-    instruction-07-triage.md
-```
+    babs-audits-skills/
+      SKILL.md
+      agents/
+        openai.yaml
+      references/
+        instruction-01.md
+        instruction-02-attack-surface.md
+        instruction-02-invariant.md
+        instruction-03-adversarial.md
+        instruction-03-poc.md
+        instruction-04-fuzzing.md
+        instruction-05-cantina.md
+        instruction-05-sherlock.md
+        instruction-06-duplicates.md
+        instruction-07-triage.md

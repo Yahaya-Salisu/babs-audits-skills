@@ -1,5 +1,4 @@
-
-INSTRUCTION-05-PoC
+## INSTRUCTION-05: Sherlock Style
 ### TASK-02: Sherlock Style
 
 # Title

@@ -3,7 +3,7 @@
 **I will provide all findings in one file.
 Group duplicate findings by shared root cause.**
 
-### DUPLICATE DEFINITION — all must be true:
+### DUPLICATE DEFINITION - all must be true:
 - Same affected contract/function/module
 - Same underlying flaw
 - Same impact class
