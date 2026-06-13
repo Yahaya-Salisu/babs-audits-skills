@@ -1,4 +1,4 @@
-## Sherlockk Style Report Formatting
+## Sherlock Style Report Formatting
 
 Before formatting, verify:
 - Summary names root cause in one clause and impact in one clause
