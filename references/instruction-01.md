@@ -35,7 +35,7 @@ List ONLY invariants that meet ALL three:
 Format per invariant:
 
 **INVARIANT-[N]: [short title]**
-─────────────────────────────
+
 What must always be true:
 [one precise sentence — mathematical if possible]
 
@@ -48,7 +48,6 @@ Where enforced (or NOT enforced):
 **Break vectors to investigate:**
 - [specific vector]
 - [specific vector]
-─────────────────────────────
 
 Rules: 3-8 invariants maximum.
 Exclude: nonReentrant, Ownable, Pausable, standard OZ patterns, known issues.
@@ -62,7 +61,7 @@ List ONLY surfaces that meet ALL three:
 Format per surface:
 
 **SURFACE-[N]: [short title]**
-──────────────────────────
+
 Location: [file + function]
 
 **Why dangerous:**
@@ -78,7 +77,7 @@ Location: [file + function]
 
 **Actor required:**
 [unprivileged / privileged-normal-action / either]
-──────────────────────────
+
 
 Rules: 3-10 surfaces maximum.
 Exclude: nonReentrant-only reentrancy, key-compromise-required admin functions, generic "handles value so check it" observations, known issues.
