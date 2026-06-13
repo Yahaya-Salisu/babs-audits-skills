@@ -20,7 +20,7 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 
 - `/instruction-01` or `run instruction-01` read references/instruction-01.md
 - `/instruction-02-attack-surface` or `run instruction-02-attack-surface` read references/instruction-02-attack-surface.md
-- `/instruction-02-invariant` or `run instruction-02-invariant` read references/instruction-02-invarian
+- `/instruction-02-invariant` or `run instruction-02-invariant` read references/instruction-02-invariant.md
 - `/instruction-03-adversarial` or `run instruction-03-adversarial` read references/instruction-03-adversarial.md
 - `/instruction-03-poc` or `run instruction-03-poc` read references/instruction-03-poc.md
 - `/instruction-04-fuzzing` or `run instruction-04-fuzzing` read references/instruction-04-fuzzing.md
