@@ -2,7 +2,7 @@
 
 I will give you one invariant from INSTRUCTION-01 with its break vectors.
 
-Your job:
+### Your job:
 1. Read the invariant and its break vectors
 2. For each break vector, trace the exact code path in the repository:
    - What sequence of calls violates the invariant?
@@ -15,8 +15,8 @@ Your job:
    - What is the measurable consequence?
 4. Output: ranked list of violations, highest damage first
 
-Format per violation:
-## Violation [N] - [one line summary]
+### Format per violation:
+**Violation [N] - [one line summary]**
 - Invariant broken: [exact statement from INSTRUCTION-01]
 - Trigger sequence: [exact calls]
 - Pre-state required: [what must be true]
@@ -25,7 +25,7 @@ Format per violation:
 - Consequence: [specific fund loss or protocol damage]
 - Severity: [C/H/M/L + one line reason]
 
-Rules:
+### Rules:
 - If the invariant IS correctly enforced everywhere, state that and stop.
 - If it is only broken theoretically with no realistic path, state Info.
 - Search the full repo for all enforcement sites before concluding a check is missing.
