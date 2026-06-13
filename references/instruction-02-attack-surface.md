@@ -48,7 +48,7 @@ Your job:
 5. Output ranked by damage, highest first
 
 Format per path:
-## Path [N] - [one line summary]
+***Path [N] - [one line summary]***
 - Trigger sequence: [exact calls]
 - Pre-state required: [what must be true]
 - Actor: [unprivileged / privileged]

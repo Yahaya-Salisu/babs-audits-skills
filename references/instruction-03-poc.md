@@ -1,7 +1,4 @@
-
-### INSTRUCTION-03-T1: PoC Writing (run after INSTRUCTION-03 if finding is Valid)
-
-Write a Foundry PoC that demonstrates the confirmed impact.
+## Write a Foundry PoC that demonstrates the confirmed impact.
 
 ### WORKFLOW:
 1. Inspect existing test files for setUp(), helpers, fixtures, token setup
