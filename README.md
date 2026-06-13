@@ -1,6 +1,6 @@
 # babs-audits-skills
 
-Reusable Codex skill for smart-contract audit workflows, finding verification, PoC writing, fuzzing, report formatting, duplicate grouping, and bounty triage.
+Reusable Codex and Claude skill for smart-contract audit workflows, finding verification, PoC writing, fuzzing, report formatting, duplicate grouping, and bounty triage.
 
 ## Install
 
@@ -10,16 +10,16 @@ Clone this repository into your Codex skills directory:
 
 ## Triggers
 
-- /INSTRUCTION-01: Architecture, invariants, and attack surfaces
-- /INSTRUCTION-02 or /INSTRUCTION-02-T2: Attack-surface bug hunt
-- /INSTRUCTION-02-T1: Invariant break hunt
-- /INSTRUCTION-03: Adversarial verification
-- /INSTRUCTION-03-T1: Foundry PoC writing
-- /INSTRUCTION-04: Foundry fuzzing test writer
-- /INSTRUCTION-05 Cantina: Cantina report formatting
-- /INSTRUCTION-05 Sherlock: Sherlock report formatting
-- /INSTRUCTION-06: Duplicate finding triage
-- /INSTRUCTION-07: Bounty finding triage
+- `/instruction-01`: Architecture, invariants, and attack surfaces
+- `/instruction-02-attack-surface`: Attack-surface bug hunt
+- `/instruction-02-invariant`: Invariant break hunt
+- `/instruction-03-adversarial`: Adversarial verification
+- `/instruction-03-poc`: Foundry PoC writing
+- `/instruction-04-fuzzing`: Foundry fuzzing test writer
+- `/instruction-05-cantina`: Cantina report formatting
+- `/instruction-05-sherlock`: Sherlock report formatting
+- `/instruction-06-duplicates`: Duplicate finding triage
+- `/instruction-07-triage`: Bounty finding triage
 
 ## Structure
 

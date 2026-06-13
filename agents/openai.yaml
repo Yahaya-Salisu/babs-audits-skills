@@ -1,3 +1,6 @@
 display_name: Babs Audits Skills
 short_description: Smart-contract audit workflows for mapping, bug hunting, verification, PoCs, fuzzing, reports, and triage.
-default_prompt: Run INSTRUCTION-01 on the current repository.
+default_prompt: Run /instruction-01 on the current repository.
+display_name: Babs Audits Skills
+short_description: Smart-contract audit workflows for mapping, bug hunting, verification, PoCs, fuzzing, reports, and triage.
+default_prompt: Run /instruction-01 on the current repository.
