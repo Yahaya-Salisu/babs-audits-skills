@@ -9,24 +9,24 @@ Do all analysis silently. Output only what is specified below — nothing else.
 - Identify all counterpoints
 - Run each finding through these gates:
 
-GATE 1 — DAMAGE TEST:
+**GATE 1 — DAMAGE TEST:**
 "If this bug exists in production and is never fixed, does any user
 or the protocol end up in a measurably worse state?"
 - No = INVALID
 
-GATE 2A — UNPRIVILEGED ACTOR (all must be YES):
+**GATE 2A — UNPRIVILEGED ACTOR (all must be YES):**
 - Real impact? (not theoretical)
 - Realistic attack sequence?
 - Attacker has clear incentive?
 - Any No = FAIL -> INVALID
 
-GATE 2B — PRIVILEGED/TRUSTED ACTOR (all must be YES):
+**GATE 2B — PRIVILEGED/TRUSTED ACTOR (all must be YES):**
 - Does the bug cause damage/loss during NORMAL, HONEST use of the role? No = INVALID
 - Is the damage realistic, not theoretical?
 - Any No = FAIL = INVALID
 - Trusted role acting maliciously alone = INVALID
 
-ADDITIONAL GATES (all must pass to stay Valid):
+**ADDITIONAL GATES (all must pass to stay Valid):**
 - Documented or expected behavior? → INVALID
 - Admin-triggered only with no honest-use damage path? → YES = INVALID
 
