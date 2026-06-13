@@ -114,7 +114,8 @@ If no concrete impact class applies = Invalid or Informational.
 | | | | | |
 
 ### COMMENT RULES:
-- Max 2 lines.
+- Max 3 lines.
 - Evidence-based.
 - No generic advice.
+- No bullet dashes
 - Mention the decisive reason: scope, admin-only, documented behavior, no damage path, misread code, unrealistic path, or validated invariant break.
