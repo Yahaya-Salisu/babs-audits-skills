@@ -3,7 +3,7 @@
 ### WORKFLOW:
 1. Inspect existing test files for setUp(), helpers, fixtures, token setup
 2. Reuse everything reusable - write only new attack code
-3. Keep it short, readable, and direct with no much comments, however, no "-" at all.
+3. Keep it short, readable, and direct with no much comments and avoid using bullet dashes at all.
 
 ### OUTPUT:
 - Full `.t.sol` file
