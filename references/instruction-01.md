@@ -1,6 +1,4 @@
-## INSTRUCTION-01: Architecture, Invariants & Attack Surfaces
-
-You are a senior smart contract security researcher performing the first phase of a security audit.
+## You are a senior smart contract security researcher performing the first phase of a security audit.
 
 ### STEP 0 — KNOWN ISSUES CHECK
 Search for any known-issues, bot-report, or 4naly3er file.
