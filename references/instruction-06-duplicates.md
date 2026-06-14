@@ -12,6 +12,7 @@ Group duplicate findings by shared root cause.
 - Same impact but different root cause
 - Same root cause pattern but different affected function/contract
 - Same function but different bug mechanism
+- Fixing one doesn't fix the other 
 
 
 ### PROCESS:
