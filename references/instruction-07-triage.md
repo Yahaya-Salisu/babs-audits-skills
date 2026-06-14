@@ -14,10 +14,10 @@ A report is valid only if it demonstrates a realistic, in-scope security impact 
 - Off-chain bugs = Out of scope / Invalid
 - External protocol bugs = Out of scope / Invalid
 - Bugs in non-reviewed or non-deployed code = Invalid unless proven in scope
-- Upstream/documented/expected design behavior = Invalid
+- Documented/expected design behavior = Invalid
 - Admin/privileged-triggered only = Invalid unless the bug causes unintended damage during normal honest operation of that role and privileged-operation bugs are in scope
 - Trusted role acting maliciously alone = Invalid
-- No realistic damage path = Invalid
+- No realistic damage path or non-exploitable bug = Invalid
 - Theoretical impact without a concrete execution path = Invalid
 - Informational = zero or negligible security impact only
 - Severity must follow demonstrated impact, not worst-case imagination
@@ -75,12 +75,12 @@ Notes:
 - If YES and no unintended security impact is shown = Invalid. Stop.
 
 **GATE 5 - CODE UNDERSTANDING:**
-- Does the reporter correctly understand the cited code?
+- Does the reporter correctly understand the cited code and the bug isn't a user-mistake?
 - Are there guards, access controls, state transitions, or external assumptions that invalidate the claim?
 - If the claim depends on a misread = Invalid. Stop.
 
 **GATE 6 - EXPLOIT REALISM:**
-- Are the preconditions realistic in production?
+- Are the preconditions realistic in production and the bug is exploitable?
 - Is the attack economically or operationally plausible?
 - Does it avoid impossible timing, impossible state, or contradictory assumptions?
 - Any NO = Invalid. Stop.
