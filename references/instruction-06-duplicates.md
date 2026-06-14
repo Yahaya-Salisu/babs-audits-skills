@@ -18,7 +18,7 @@ Group duplicate findings by shared root cause.
 1. Read all finding titles and summaries.
 2. Build candidate clusters by contract/function.
 3. Compare root cause, impact, and fix path.
-4. Choose first report in series as Primary.
+4. Choose first report by serial as Primary.
 5. Put the rest as Duplicates.
 6. Leave uncertain cases as Unique.
 
