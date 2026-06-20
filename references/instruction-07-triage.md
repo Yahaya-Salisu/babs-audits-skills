@@ -99,11 +99,7 @@ If all gates pass, classify the demonstrated impact:
 If no concrete impact class applies = Invalid or Informational.
 
 ### SEVERITY GUIDE:
-- Critical: direct realistic fund loss, permanent freezing of major funds, unauthorized mint/burn, protocol insolvency, or full protocol compromise with minimal preconditions.
-- High: significant fund loss, permanent/major denial of service, governance/control compromise, or severe state corruption with limited preconditions.
-- Medium: material security impact with meaningful constraints, stronger preconditions, limited blast radius, temporary disruption, or griefing with protocol/user harm.
-- Low: real but limited impact, narrow edge case, low-value harm, or minor security degradation.
-- Informational: code quality, best practice, unclear risk, or zero measurable security impact.
+Severity and impact criteria are defined in `references/severity-guidelines.md` under the declared platform's section. Do not use generic severity judgment — cite the specific rule that applies.
 
 ### OUTPUT FORMAT:
 | ID | Verdict | Severity | Failed/Passed Gate | Comment to reporter |
@@ -119,3 +115,11 @@ If no concrete impact class applies = Invalid or Informational.
 - No generic advice.
 - No bullet dashes
 - Mention the decisive reason: scope, admin-only, documented behavior, no damage path, misread code, unrealistic path, or validated invariant break.
+
+### VALID FINDING REQUIREMENT:
+For every Valid finding, include:
+- Broken invariant:
+- Attacker / actor:
+- Trigger path:
+- Impact:
+- Severity rationale:
