@@ -69,8 +69,8 @@ Link: https://docs.cantina.xyz/evaluations-and-standards/severity-classification
 ### Valid Severity Tiers: High, Medium, Low, Informational
 
 ### Severity Matrix (Impact × Likelihood)
-| | Impact: High | Impact: Medium | Impact: Low |
-|---|---|---|---|
+| Severity | Impact: High | Impact: Medium | Impact: Low |
+|---|---|---|--|
 | Likelihood: High | High | High | Medium |
 | Likelihood: Medium | High | Medium | Low |
 | Likelihood: Low | Medium | Low | Informational |
