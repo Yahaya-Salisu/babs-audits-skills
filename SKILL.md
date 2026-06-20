@@ -13,8 +13,18 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 - Stay within in-scope files only.
 - Be harsh. Reject weak, speculative, or low-impact claims.
 - State broken invariants explicitly for every bug discussion.
-- Downgrade severity one tier per precondition the attacker does not control.
 - Prefer concise, evidence-driven reasoning. No generic security advice.
+
+## Platform Declaration Rule
+
+**Before running instruction-03-adversarial or instruction-07-triage, the target platform MUST be declared.**
+Accepted values: `Sherlock` | `Cantina` | `HackenProof` | `Immunefi`
+
+If the platform is not declared, REFUSE to run and ask exactly:
+> "Which platform is this submission for? (Sherlock / Cantina / HackenProof / Immunefi) — severity classification differs per platform and I need this before proceeding."
+
+Once declared, load `references/severity-guidelines.md` and apply ONLY the matching platform section.
+Do NOT apply your own severity judgment. Every severity and validity decision must be explained by citing the exact rule from the platform's section in severity-guidelines.md that justifies it. No self-decision.
 
 ## Trigger Routing
 
