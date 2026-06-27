@@ -17,14 +17,14 @@ Follow the requested instruction exactly. Apply it to the current repository or 
 
 ## Platform Declaration Rule
 
-**Before running instruction-03-adversarial or instruction-07-triage, the target platform MUST be declared.**
-Accepted values: `Sherlock` | `Cantina` | `HackenProof` | `Immunefi`
+**Before running instruction-01, instruction-03-adversarial, or instruction-07-triage, the target platform AND its severity/impact criteria MUST be declared.**
+Accepted platform values: `Sherlock` | `Cantina` | `HackenProof` | `Immunefi`
+Severity/impact criteria: either the platform's default guidelines, or a custom rubric supplied for this specific engagement (custom rubric takes precedence when both exist).
 
-If the platform is not declared, REFUSE to run and ask exactly:
-> "Which platform is this submission for? (Sherlock / Cantina / HackenProof / Immunefi) — severity classification differs per platform and I need this before proceeding."
+If not declared, REFUSE to run and ask exactly:
+> "Which platform is this submission for, and what severity/impact criteria apply (platform default or a custom rubric)? I need this before proceeding — severity classification differs per platform and instruction-01's Step 3 depends on it directly."
 
-Once declared, load `references/severity-guidelines.md` and apply ONLY the matching platform section.
-Do NOT apply your own severity judgment. Every severity and validity decision must be explained by citing the exact rule from the platform's section in severity-guidelines.md that justifies it. No self-decision.
+Once declared, load `references/severity-guidelines.md` and apply ONLY the matching platform section, unless a custom rubric overrides it. Do NOT apply your own severity judgment. Every severity and validity decision must be explained by citing the exact rule that justifies it. No self-decision.
 
 ## Trigger Routing
 
