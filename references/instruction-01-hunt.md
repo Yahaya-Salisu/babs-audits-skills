@@ -217,7 +217,7 @@ What to check:
 - [specific check]
 Actor required: [unprivileged / privileged-normal-action / either]
 
-Rules: 3-10 surfaces maximum total across all 6 angles combined. Exclude
+Rules: 5-15 surfaces maximum total across all 6 angles combined. Exclude
 nonReentrant-only reentrancy, key-compromise-required admin functions, and
 generic "handles value so check it" observations. If an angle has no applicable
 shapes in this codebase, state "[angle] — no applicable shapes found" and move
