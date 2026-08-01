@@ -19,6 +19,7 @@ Value flow - one sentence per path:
 Modules - one line each, single responsibility only. This list doubles as the
 coverage map Step 5 uses later — be exhaustive even if shallow.
 
+---
 
 ### STEP 2 — FILE RISK & COMPLEXITY RANKING
 List every in-scope file exactly once, then rank them from highest to lowest combined risk and complexity, so the highest-value files can be run through solidity-auditor and the other instructions independently and repeatedly, per file, rather than diluting attention across the whole codebase in one pass.
