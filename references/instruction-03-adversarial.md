@@ -14,21 +14,24 @@ Do all analysis silently. Output only what is specified below — nothing else.
 or the protocol end up in a measurably worse state?"
 - No = INVALID
 
-**GATE 2A — UNPRIVILEGED ACTOR (all must be YES):**
-- Real impact? (not theoretical)
-- Realistic attack sequence?
+**GATE 2A — UNPRIVILEGED ACTOR (all must be YES, mark N/A if this path does not apply to the finding):**
+- The bug demonstrates unprivileged Attacker-controlled path?
+- Attack sequence and preconditions plausible?
 - Attacker has clear incentive?
-- Any No = FAIL -> INVALID
+- Any No = **FAIL** -> **INVALID**
 
-**GATE 2B — PRIVILEGED/TRUSTED ACTOR (all must be YES):**
-- Does the bug cause damage/loss during NORMAL, HONEST use of the role? No = INVALID
-- Is the damage realistic, not theoretical?
-- Any No = FAIL = INVALID
-- Trusted role acting maliciously alone = INVALID
+**GATE 2B — PRIVILEGED/TRUSTED ACTOR (all must be YES, mark N/A if this path does not apply to the finding):**
+- Does the bug cause damage/loss during NORMAL, HONEST operation of the role? NO = INVALID
+- Sequence and preconditions plausible?
+- Any No = **FAIL** -> **INVALID**
+- (Trusted role acting maliciously alone = INVALID.)
 
-**ADDITIONAL GATES (all must pass to stay Valid):**
-- Documented or expected behavior? → INVALID
-- Admin-triggered only with no honest-use damage path? → YES = INVALID
+Only one of Gate 2A or Gate 2B needs to apply to a given finding — mark whichever one does not apply as N/A rather than forcing it through and failing it.
+
+**GATE 3 — DOCUMENTED OR KNOWN:**
+- Already in known-issues, prior audits, prior reports, or disclosed anywhere the program points to or that you can find?
+- Intended, expected, or documented design behavior?
+- Any Yes = FAIL -> INVALID
 
 ### OUTPUT ONLY:
 
