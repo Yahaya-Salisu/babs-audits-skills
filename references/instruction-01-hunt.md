@@ -25,53 +25,38 @@ this one's, so don't over-engineer the skim into a hard gate.
 
 ---
 
-### SECTION 1 — KNOWN-ISSUE SIBLINGS
-Pull every available source: known-issues/bot-report/4naly3er files, prior audit
-reports, disclosed incident postmortems, bug-bounty writeups, git commit history
-(search for security-flavored messages: "fix", "gate", "guard", "patch", "vuln",
-"hardfork"), and any already-judged findings from this same engagement.
+### SECTION 1 — KNOWN-ISSUE FIX VERIFICATION & SIBLINGS
+Pull every available source: known-issues/bot-report/4naly3er files, prior audit reports, disclosed incident postmortems, bug-bounty writeups, git commit history (search for security-flavored messages: "fix", "gate", "guard", "patch", "vuln", "hardfork"), and any already-judged findings from this same engagement.
 
-**Source-access check, before starting:** known-issues files, bundled audit
-reports, and README/CHANGELOG content are fully readable from an uploaded zip.
-Disclosed incident postmortems and bug-bounty writeups are found via web search
-regardless of zip vs. link. Git commit history requires either a direct
-repository link (to clone it) or pasted `git log`/diff output — a zip alone
-contains no commit history. If commit-history mining would add value and only a
-zip has been provided, state this explicitly and ask:
-> "I can't mine commit history from a zip — no `.git` data is included. If you
-> want fix-commit mining in Section 1, send a direct repo link or paste
-> relevant `git log` output. Otherwise I'll proceed with the other sources."
+**Source-access check, before starting:** known-issues files, bundled audit reports, and README/CHANGELOG content are fully readable from an uploaded zip. Disclosed incident postmortems and bug-bounty writeups are found via web search regardless of zip vs. link. Git commit history requires either a direct repository link to clone it or pasted git log/diff output, since a zip alone contains no commit history. If commit-history mining would add value and only a zip has been provided, state this explicitly and ask:
+> "I can't mine commit history from a zip — no .git data is included. If you want fix-commit mining in Section 1, send a direct repo link or paste relevant git log output. Otherwise I'll proceed with the other sources."
 Do not silently skip this — say so, then proceed with whatever sources remain.
 
-For each one found, extract the MECHANISM, then search the codebase for
-structural siblings that are missing the same fix.
+For each fix found, run two stages in order on that mechanism, and stop at whichever stage produces a candidate.
 
-Output each candidate in this format:
+**STAGE A — DISPROVE THE FIX**
+At the fix's own original location, try to actively break it rather than confirming it exists. Test the exact boundary condition the fix was meant to close: a wrong comparison operator, an off-by-one, a code path that reaches the vulnerable state without passing through the fixed function at all, a caller that can supply an argument or combination of arguments the fix didn't anticipate, or a precondition the fix silently assumes but that isn't actually always true. A fix that merely looks present is not yet cleared just because a check exists, so trace at least one concrete input through it and confirm it genuinely blocks the original exploit path rather than a weaker version of it. Spend no more than two or three concrete input attempts per mechanism before concluding the fix holds, and if it does, name the specific input or path traced through it and move to Stage B. If the fix does not hold, output it using Format A below and stop, and do not run Stage B for that mechanism.
 
-**[Short title]**
+**STAGE B — SIBLING HUNT**
+Extract the mechanism the original fix relies on, then search the codebase for structural siblings that are missing that same fix, meaning the same kind of state mutation, the same external-data-trust pattern, the same message-handler family, or the same arithmetic operation as the original. Output any gap using Format B below.
+
+**FORMAT A — FIX BYPASS**
+**[Short title] — FIX BYPASS**
 Location: [file:function]
-Description: [what the sibling function does, and exactly how its shape
-  matches the fixed mechanism — same kind of state mutation, same
-  external-data-trust pattern, same message-handler family, same arithmetic
-  operation as the original fix]
-Impact: [map to the program's declared acceptable-impact categories — name the
-  category, not a severity label]
-Root cause + sibling fix status: [source of the original fix — audit report /
-  commit hash / incident writeup / judged finding # — exact mechanism that was
-  fixed there, and whether this sibling location has the same protection:
-  YES (cite the matching check) / NO (gap confirmed) / PARTIAL (describe gap)]
+Original fix: [source of the fix — audit report / commit hash / incident writeup / known-issue # — and exactly what exploit path it was meant to close]
+Bypass: [the specific input, path, or condition that gets around the fix, traced step by step through the actual code]
+Impact: [map to the program's declared acceptable-impact categories — name the category, not a severity label]
 
-Rules: do not mark a sibling "cleared" without naming the specific check that
-clears it. "I didn't find a problem" is UNCHECKED, not CLEARED. Stop the
-sibling search for a given mechanism once two consecutive search angles (e.g.
-different grep patterns, or a structural-shape search after a literal one)
-return zero new occurrences — record that stopping point explicitly.
-Do not assign severity or confidence here — that is instruction-03-adversarial's
-job, not this section's.
+**FORMAT B — SIBLING GAP**
+**[Short title] — SIBLING GAP**
+Location: [file:function]
+Description: [what the sibling function does, and exactly how its shape matches the fixed mechanism]
+Impact: [map to the program's declared acceptable-impact categories — name the category, not a severity label]
+Root cause + sibling fix status: [source of the original fix, exact mechanism that was fixed there, and whether this sibling location has the same protection: YES (cite the matching check) / NO (gap confirmed) / PARTIAL (describe gap)]
 
-State: "SECTION 1 COMPLETE. [N] mechanisms extracted, [M] sibling gaps flagged
-— hand each directly to instruction-03-adversarial." If no known-issues/audit/
-incident/commit-history source exists at all, state that explicitly.
+Rules: do not mark a fix as holding, or a sibling as cleared, without naming the specific input or check that clears it, since "I didn't find a problem" is UNCHECKED, not CLEARED. Stop the sibling search for a given mechanism once two consecutive search angles, such as different grep patterns or a structural-shape search after a literal one, return zero new occurrences, and record that stopping point explicitly. Do not assign severity or confidence here, since that is instruction-03-adversarial's job, not this section's.
+
+State: "SECTION 1 COMPLETE. [N] mechanisms checked, [X] fix bypasses caught, [M] sibling gaps flagged — hand each directly to instruction-03-adversarial." If no known-issues/audit/incident/commit-history source exists at all, state that explicitly.
 
 ---
 
