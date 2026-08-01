@@ -37,6 +37,7 @@
 - One-two console.log to demonstrate the impact
 
 
+# STEP 3 — TESTNET SCRIPT (.s.sol)
 ## Write a Foundry Script that executes the exploit as real, broadcast transactions on a public testnet.
 
 ### WORKFLOW:
