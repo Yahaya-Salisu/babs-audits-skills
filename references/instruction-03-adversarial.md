@@ -35,6 +35,9 @@ or the protocol end up in a measurably worse state?"
 **Invariant broken:**
 [one precise sentence — or "none identified" if claim is false]
 
+**Anticipated team defense:**
+[write out, in the target team's own voice, the single most likely reason they would reject this finding, before deciding the verdict]
+
 **Counterpoints:**
 - [factual counterpoint if any]
 - [or "None - claim survives all checks"]
@@ -42,11 +45,12 @@ or the protocol end up in a measurably worse state?"
 **Verdict:**
 ```json
 {
+  "Gate0_ScopeAndRootCause": "PASS | FAIL",
   "Gate1_Damage": "PASS | FAIL",
-  "Gate2A_Unprivileged": "PASS | N/A",
-  "Gate2B_Q1_HonestUse": "PASS | FAIL | N/A",
-  "Gate2B_Q2_Realistic": "PASS | FAIL",
-  "Documented_Behavior": "YES - invalid | NO - proceed",
+  "Gate2A_Unprivileged": "PASS | FAIL | N/A",
+  "Gate2B_HonestUse": "PASS | FAIL | N/A",
+  "Gate3_DocumentedOrKnown": "NO - proceed | YES - invalid",
+  "Anticipated_Team_Defense": "...",
   "Verdict": "VALID | INVALID",
   "Severity": "CRITICAL | HIGH | MEDIUM | LOW | INFO",
   "Confidence": "0%-100%",
