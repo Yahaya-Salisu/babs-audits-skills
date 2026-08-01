@@ -52,7 +52,7 @@ or the protocol end up in a measurably worse state?"
   "Gate3_DocumentedOrKnown": "NO - proceed | YES - invalid",
   "Anticipated_Team_Defense": "...",
   "Verdict": "VALID | INVALID",
-  "Severity": "CRITICAL | HIGH | MEDIUM | LOW | INFO",
+  "Severity": "CRITICAL | HIGH | MEDIUM | LOW",
   "Confidence": "0%-100%",
   "Attack_Timing": "atomic | multi-block"
 }
