@@ -9,6 +9,14 @@ Do all analysis silently. Output only what is specified below — nothing else.
 - Identify all counterpoints
 - Run each finding through these gates:
 
+**GATE 0 — SCOPE & ROOT-CAUSE CHECK:**
+- Confirm the affected file and the mapped impact are both listed in the program's in-scope assets and acceptable-impact categories by checking the actual program documentation rather than relying on memory.
+- Confirm the trigger mechanism does not appear anywhere in the program's out-of-scope list by checking the actual document rather than relying on memory.
+- Once the triggering event happens no matter how external or unlikely that event is, determine whether the protocol's own code reaches a factually wrong conclusion from otherwise accurate inputs, which keeps the finding eligible, or whether the protocol's own code reaches a correct but inconvenient conclusion by conservatively refusing to act, by trusting a party it was designed to trust, or by declining to automate a decision that reasonably requires human judgment, any of which makes the finding invalid regardless of how unfair the outcome feels.
+- Determine whether the reported shape is a well known and standard characteristic of this class of protocol in general, independent of whether this specific program's own known-issues page happens to mention it.
+- Check whether your own proposed fix trades a hard revert or a conservative refusal for a softer or partial path, and if it does, treat that as a signal that the revert itself is the actual safety mechanism rather than treating your proposal as a valid fix.
+- Any failure on the checks above ends the review immediately with an INVALID verdict, before any severity is scored.
+
 **GATE 1 — DAMAGE TEST:**
 "If this bug exists in production and is never fixed, does any user
 or the protocol end up in a measurably worse state?"
