@@ -114,10 +114,7 @@ List ONLY surfaces that meet ALL three:
 2. Impact is fund theft, permanent loss, or protocol damage
 3. Not already covered in prior sections
 
-Work the 6 angles below. Each is a distinct lens — a location can legitimately
-produce a candidate under more than one angle if the root cause genuinely
-differs; if the root cause is the same, file it once and cite the strongest
-angle.
+Before touching any code, build a single ordered queue containing the 6 angles below in the order they are listed, 5A through 5F. Run only one angle from this queue per pass, working it to completion across every in-scope file before stopping, and do not begin work on any other angle in the same pass even if it looks fast or obviously related. Each angle is a distinct lens over the same set of in-scope files, and a location can legitimately produce a candidate under more than one angle if the root cause genuinely differs, but if the root cause is the same as one already filed under an earlier angle in this run, do not file it again, cite the earlier SURFACE-N instead. Before starting each angle after the first, skim every SURFACE-N already produced by earlier angles in this same Section 4 run, so this dedup rule is actually applied rather than assumed.
 
 **5A — ACCOUNTING EDGES**
 Scope: functions that move value, update balances, mint, burn, compute shares,
@@ -216,13 +213,21 @@ to the next.
 State: "SECTION 4 COMPLETE. [N] surfaces across [list of angles used]. Hand
 each SURFACE-[N] to instruction-02-surface."
 
----
+Format per surface, one running list continued across angle passes rather than restarted for each angle:
 
-### OUTPUT
-No prose between sections. No summaries. Every item must name the specific
-function and specific thing to check — or cut it.
+**SURFACE-[N]: [short title]**
+Angle: [5A / 5B / 5C / 5D / 5E / 5F]
+Location: [file + function]
+Why dangerous: [one sentence]
+Pattern match: [known exploit pattern name, or "no direct pattern match"]
+What to check:
+- [specific check]
+- [specific check]
+- [specific check]
+Actor required: [unprivileged / privileged-normal-action / either]
 
-Section 1 and Section 2 candidates -> instruction-03-adversarial directly.
-Section 3 (INVARIANT-[N] + break-vector paths) -> instruction-02-invariant.
-Section 4 (SURFACE-[N]) -> instruction-02-surface.
-Both instructions' traced outputs -> instruction-03-adversarial.
+Rules: 5-15 surfaces maximum total across all 6 angles combined, tracked cumulatively across passes rather than reset for each angle. Exclude nonReentrant-only reentrancy, key-compromise-required admin functions, and generic "handles value so check it" observations. If an angle has no applicable shapes in this codebase, state "[angle] — no applicable shapes found" and count it as complete with zero surfaces added.
+
+State after each angle: "ANGLE [5X] COMPLETE. [N] new surfaces added this pass, [M] running total across all angles so far. Remaining queue: [list every angle not yet run, in order]. Say 'continue' or name the next angle to move on." Then stop and wait, and do not proceed to the next angle in the same response.
+
+Once the last angle in the queue has been run, state instead: "SECTION 4 COMPLETE. [N] surfaces across [list of angles used]. Hand each SURFACE-[N] to instruction-02-surface."
