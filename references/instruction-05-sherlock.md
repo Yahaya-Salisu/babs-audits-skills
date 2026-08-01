@@ -1,8 +1,8 @@
 ## Sherlock Style Report Formatting
 
 Before formatting, verify:
-- Summary names root cause in one clause and impact in one clause
-- Impact section contains a number - if no USD estimate, write one first
+- Under summary add snippet vulnerable code after explaining the bug
+- Under Impact section, explain where the bug maps the Critical, High or Medium-Severity criteria based on sherlock guidelines or provided custom rubric severity and impact categories 
 - Recommendation changes exactly one thing - if multiple fixes needed, refine root cause first
 - Avoid using bullet dashes at all.
 ```md
