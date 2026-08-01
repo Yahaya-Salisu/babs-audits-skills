@@ -189,8 +189,6 @@ blacklist on held tokens.
 Kill immediately: assumptions where the protocol explicitly handles the failure
 case in code already.
 
----
-
 Format per surface (one combined list across all 6 angles):
 
 **SURFACE-[N]: [short title]**
