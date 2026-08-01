@@ -2,7 +2,7 @@
 
 ### INPUTS REQUIRED BEFORE STARTING:
 - Project repository / local codebase
-- Project documentation, if available
+- Project documentation, including any bundled audit reports, README/CHANGELOG content, and known-issues or disclosure pages, if available — check the repository and the program page for these directly rather than assuming none exist
 - Link of platform's global rules
 - Program link for scope and specific rules
 - All findings in markdown file
@@ -15,8 +15,10 @@ A report is valid only if it demonstrates a realistic, in-scope security impact 
 - External protocol bugs = Out of scope / Invalid
 - Bugs in non-reviewed or non-deployed code = Invalid unless proven in scope
 - Documented/expected design behavior = Invalid
+- A well known and standard characteristic of this class of protocol in general, independent of whether this specific program's own documentation states it = Invalid
 - Admin/privileged-triggered only = Invalid unless the bug causes unintended damage during normal honest operation of that role and privileged-operation bugs are in scope
 - Trusted role acting maliciously alone = Invalid
+- The reporter's own proposed fix trades a hard revert or a conservative refusal for a softer or partial path = treat as a signal the revert is the actual safety mechanism, not evidence of a bug
 - No realistic damage path or non-exploitable bug = Invalid
 - Theoretical impact without a concrete execution path = Invalid
 - Informational = zero or negligible security impact only
@@ -27,18 +29,21 @@ A report is valid only if it demonstrates a realistic, in-scope security impact 
 2. Identify the exact affected contract, function, and code path.
 3. Locate and read the cited code in the repository.
 4. Check whether the affected code/version/asset is in scope.
-5. Check project documentation for expected or documented behavior.
+5. Check project documentation, bundled audit reports, README/CHANGELOG content, and any known-issues or disclosure pages for expected or documented behavior, not relying on a single documentation source alone.
 6. Check HackenProof global rules and project-specific rules, if available.
 7. Apply all kill gates below.
-8. If valid, state the exact invariant broken.
-9. Assign severity based only on demonstrated impact.
-10. Produce a short reporter-facing comment.
+8. Before finalizing an Invalid verdict, write out the single strongest counter-argument the reporter could raise against it, and confirm the verdict still holds once that counter-argument is considered.
+9. If valid, state the exact invariant broken.
+10. Assign severity based only on demonstrated impact.
+11. Produce a short reporter-facing comment.
+
+All gate reasoning, source checks, and the counter-argument pressure test in step 8 happen silently — the table in OUTPUT FORMAT and the Valid Finding Requirement block are the only outputs produced per finding.
 
 ### KILL GATES:
 **GATE 1 - TARGET / VERSION / SCOPE:**
 - Is the affected asset in scope?
 - Is the reviewed code the deployed or intended target version?
-- Is the affected component owned by the program, not an external dependency?
+- Is the affected component itself owned and written by the program, as opposed to being a third-party contract the program merely calls into? A program-owned component that reads or depends on external data, such as an oracle feed or a bridge message, is still in scope even though the data source is external, since being triggered by external data is not the same as the affected code itself being external.
 - Any NO = Out of scope / Invalid. Stop.
 
 **GATE 2 - DAMAGE TEST:**
@@ -71,8 +76,10 @@ Notes:
 
 **GATE 4 - EXPECTED BEHAVIOR / DOCUMENTATION:**
 - Is the behavior documented, intentional, or part of accepted protocol design?
-- Is the report simply describing known asynchronous, upgrade, oracle, bridge, or governance behavior?
-- If YES and no unintended security impact is shown = Invalid. Stop.
+- Once the triggering event happens no matter how external or unlikely that event is, does the program's own code reach a factually wrong conclusion from otherwise accurate inputs, which keeps the finding eligible, or does it reach a correct but inconvenient conclusion by conservatively refusing to act, by trusting a party it was designed to trust, or by declining to automate a decision that reasonably requires human judgment, any of which makes the finding invalid regardless of how unfair the outcome feels?
+- Is the reported shape a well known and standard characteristic of this class of protocol in general, independent of whether this specific program's own documentation happens to mention it?
+- Does the reporter's own proposed fix trade a hard revert or a conservative refusal for a softer or partial path? If it does, treat that as a signal the revert is the actual safety mechanism rather than evidence of a bug.
+- If any of the above indicates documented, intended, or standard behavior and no unintended security impact is shown = Invalid. Stop.
 
 **GATE 5 - CODE UNDERSTANDING:**
 - Does the reporter correctly understand the cited code and the bug isn't a user-mistake?
