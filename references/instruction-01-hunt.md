@@ -61,32 +61,25 @@ State: "SECTION 1 COMPLETE. [N] mechanisms checked, [X] fix bypasses caught, [M]
 ---
 
 ### SECTION 2 — IMPACT-DRIVEN CANDIDATE MAP
-Take the platform/program's declared severity and impact criteria and for each
-category, answer BEFORE touching code: "which kind of code, if broken, produces
-exactly this?" Name candidate files and functions from that hypothesis — do not
-start by reading code and working backward into a category. Then open the code
-and confirm the shape actually exists.
+Before touching any code, build a single ordered queue listing every individual impact bullet from the program's declared severity and impact criteria, one entry per bullet, ordered from the highest severity band down to the lowest and in the order each bullet appears within its band. Do not collapse multiple bullets from the same band into one entry, and do not run more than one entry from this queue per pass.
 
-Output each confirmed candidate in this format:
+On each pass, take only the next impact bullet at the top of the queue, and before touching code, answer "which kind of code, if broken, produces exactly this?" Name candidate files and functions from that hypothesis, then open the code and confirm the shape actually exists rather than starting by reading code and working backward into a category. Work only this one impact bullet to completion before stopping, and do not begin work on any other bullet in the same pass even if it looks fast or obviously related.
+
+Output confirmed candidates for that single impact bullet in this format:
 
 **[Short title]**
 Location: [file:function]
-Description: [the hypothesis that was written before opening the file, then
-  what the code actually does — confirm the shape exists, don't just restate
-  the hypothesis]
-Impact: [map to the program's declared acceptable-impact categories — name the
-  category, not a severity label]
-Root cause: [the specific missing check, wrong ordering, or absent enforcement
-  — cited to the exact line or condition where it should exist]
+Description: [the hypothesis that was written before opening the file, then what the code actually does, confirming the shape exists rather than just restating the hypothesis]
+Impact: [the exact impact bullet this candidate maps to, quoted or closely paraphrased from the program's own wording]
+Root cause: [the specific missing check, wrong ordering, or absent enforcement, cited to the exact line or condition where it should exist]
 
-Rules: work the highest-weighted rubric categories first. If the rubric has
-more bands than remaining budget allows in one pass, say so explicitly and stop
-rather than thinning coverage silently across all bands.
-Do not assign severity or confidence here — that is instruction-03-adversarial's
-job, not this section's.
+If no candidate is found for this impact bullet after a genuine hypothesis-first search, state that explicitly rather than forcing a weak candidate to fill the section.
 
-State: "SECTION 2 COMPLETE. [N] candidates — hand each directly to
-instruction-03-adversarial."
+Rules: do not assign severity or confidence here, since that is instruction-03-adversarial's job, not this section's.
+
+State: "IMPACT [current bullet, quoted] COMPLETE. [N] candidates found. Remaining queue: [list every impact bullet not yet run, in order]. Say 'continue' or name the next impact to move on." Then stop and wait, and do not proceed to the next impact bullet in the same response.
+
+Once the last item in the queue has been run, state instead: "SECTION 2 COMPLETE. [N] total candidates across [M] impact categories — hand each directly to instruction-03-adversarial."
 
 ---
 
