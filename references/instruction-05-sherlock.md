@@ -8,7 +8,7 @@ Before formatting, verify:
 ```md
 # Title
 
-## Description
+## Summary
 
 ## Root Cause
 
