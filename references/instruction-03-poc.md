@@ -1,3 +1,4 @@
+# STEP 1 — LOCAL TEST POC
 ## Write a Foundry PoC that demonstrates the confirmed impact.
 
 ### WORKFLOW:
@@ -16,6 +17,7 @@
 - One-two console.log to demonstrate the impact.
 
 
+# STEP 2 — MAINNET FORK POC
 ## Write a Foundry PoC as a mainnet/L2 fork test against the real live deployment.
 
 ### WORKFLOW:
