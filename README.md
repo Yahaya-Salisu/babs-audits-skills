@@ -8,6 +8,10 @@ Clone this repository into your Codex skills directory:
 
     ~/.codex/skills/babs-audits-skills/
 
+Clone this repository into your Claude skills directory:
+
+    ~/.claude/skills/babs-audits-skills/
+
 ## Triggers
 
 - `/instruction-01`: Architecture, invariants, and attack surfaces
